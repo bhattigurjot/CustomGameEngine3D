@@ -1,12 +1,11 @@
 #include <iostream>
 
-#include <SDL/SDL.h>
-#include <GL/glew.h>
+#include "Engine.h"
 
 int main(int argc, char**argv)
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	glewInit();
+	Engine engine;
+	engine.Run();
 
 	return 0;
 }
