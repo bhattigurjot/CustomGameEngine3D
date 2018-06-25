@@ -13,16 +13,15 @@ public:
 
 	inline int GetWindowHeight() const { return m_windowHeight; }
 	inline int GetWindowWidth() const { return m_windowWidth; }
+	inline bool IsRunning() const { return m_isRunning; }
 
+	void WindowDestroy();
 	void InitializeSystems();
-	void RunLoop();
-
-private:
-	bool IsRunning() const { return m_isRunning; }
 	void HandleInputs();
 	void Clear(float _r, float _g, float _b, float _a);
 	void Draw();
 
+private:
 	int m_windowWidth;
 	int m_windowHeight;
 	std::string m_windowTitle;

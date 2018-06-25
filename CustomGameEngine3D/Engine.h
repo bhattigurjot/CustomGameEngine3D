@@ -7,9 +7,13 @@ public:
 	Engine();
 	~Engine();
 
+	void Start();
 	void Run();
+	void Stop();
 
 private:
-	Window* m_window;
+	bool m_isEngineRunning;
+
+	Window* m_gameWindow;
 };
 

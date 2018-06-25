@@ -14,6 +14,11 @@ Window::Window(const int _width, const int _height, const std::string& _title):
 
 Window::~Window()
 {
+	WindowDestroy();
+}
+
+void Window::WindowDestroy()
+{
 	// Delete context
 	if (m_glContext || m_glContext != nullptr)
 	{
@@ -75,15 +80,6 @@ void Window::InitializeSystems()
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 }
 
-void Window::RunLoop()
-{
-	while (IsRunning())
-	{
-		HandleInputs();
-		Draw();
-	}
-}
-
 void Window::HandleInputs()
 {
 	SDL_Event evt;
@@ -118,7 +114,6 @@ void Window::Draw()
 	Clear(0.0f, 1.0f, 0.0f, 1.0f);
 
 	// Draw stuff here
-	
 
 	// Swap the buffers for the window
 	SDL_GL_SwapWindow(m_window);
