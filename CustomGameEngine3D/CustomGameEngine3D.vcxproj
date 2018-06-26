@@ -18,6 +18,33 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RenderEngine\Loader.cpp" />
+    <ClCompile Include="RenderEngine\Models\RawModel.cpp" />
+    <ClCompile Include="RenderEngine\Renderer.cpp" />
+    <ClCompile Include="RenderEngine\Shaders\Shader.cpp" />
+    <ClCompile Include="RenderEngine\Shaders\StaticShader.cpp" />
+    <ClCompile Include="RenderEngine\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="EngineTime.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="RenderEngine\Loader.h" />
+    <ClInclude Include="RenderEngine\Models\RawModel.h" />
+    <ClInclude Include="RenderEngine\Models\Vertex.h" />
+    <ClInclude Include="RenderEngine\Renderer.h" />
+    <ClInclude Include="RenderEngine\Shaders\Shader.h" />
+    <ClInclude Include="RenderEngine\Shaders\StaticShader.h" />
+    <ClInclude Include="RenderEngine\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shaders\basicShader_f.glsl" />
+    <None Include="Resources\shaders\basicShader_v.glsl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{72237F58-BB8C-4616-84F6-E7C6229F5B3E}</ProjectGuid>
@@ -134,23 +161,6 @@
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="Loader.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="RenderEngine\RawModel.cpp" />
-    <ClCompile Include="RenderEngine\Window.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="EventHandler.h" />
-    <ClInclude Include="EngineTime.h" />
-    <ClInclude Include="Loader.h" />
-    <ClInclude Include="RenderEngine\RawModel.h" />
-    <ClInclude Include="RenderEngine\Window.h" />
-    <ClInclude Include="Utils\Logger.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
