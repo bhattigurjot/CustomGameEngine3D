@@ -1,6 +1,6 @@
 #include "Window.h"
 
-#include "Logger.h"
+#include "../Utils/Logger.h"
 
 Window::Window(const int _width, const int _height, const std::string& _title):
 	m_windowWidth(_width),
@@ -15,6 +15,21 @@ Window::Window(const int _width, const int _height, const std::string& _title):
 Window::~Window()
 {
 	WindowDestroy();
+}
+
+int Window::GetWindowHeight() const 
+{ 
+	return m_windowHeight;
+}
+
+int Window::GetWindowWidth() const
+{ 
+	return m_windowWidth;
+}
+
+bool Window::IsRunning() const 
+{ 
+	return m_isRunning; 
 }
 
 void Window::WindowDestroy()
@@ -43,6 +58,12 @@ void Window::InitializeSystems()
 		LogError("Unable to initialize SDL: ", SDL_GetError());
 	}
 
+	// Set Attributes
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
+	// Enable double buffer swapping
+	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
 	// Create a window
 	m_window = SDL_CreateWindow(
 		m_windowTitle.c_str(),
@@ -52,6 +73,8 @@ void Window::InitializeSystems()
 		m_windowHeight,
 		SDL_WINDOW_OPENGL
 	);
+
+	glViewport(0, 0, m_windowWidth, m_windowHeight);
 
 	if (m_window == nullptr)
 	{
@@ -75,9 +98,6 @@ void Window::InitializeSystems()
 		//Exit();
 	}
 	SDL_Log("Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-
-	// Enable double buffer swapping
-	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 }
 
 void Window::HandleInputs()

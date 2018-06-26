@@ -11,9 +11,9 @@ public:
 	Window(const int _width, const int _height, const std::string& _title);
 	~Window();
 
-	inline int GetWindowHeight() const { return m_windowHeight; }
-	inline int GetWindowWidth() const { return m_windowWidth; }
-	inline bool IsRunning() const { return m_isRunning; }
+	int GetWindowHeight() const;
+	int GetWindowWidth() const;
+	bool IsRunning() const;
 
 	void WindowDestroy();
 	void InitializeSystems();
