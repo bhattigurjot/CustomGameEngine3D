@@ -131,7 +131,7 @@ void Window::Clear(float _r, float _g, float _b, float _a)
 void Window::Draw()
 {
 	// Set the background color to clear
-	Clear(0.0f, 1.0f, 0.0f, 1.0f);
+	//Clear(0.0f, 1.0f, 0.0f, 1.0f);
 
 	// Draw stuff here
 
