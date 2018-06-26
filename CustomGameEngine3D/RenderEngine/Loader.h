@@ -1,6 +1,6 @@
 #pragma once
 
-#include "RawModel.h"
+#include "Models/RawModel.h"
 
 #include <vector>
 
@@ -10,11 +10,12 @@ public:
 	Loader();
 	~Loader();
 
-	RawModel LoadToVAO(const std::vector<float>& _positions);
+	RawModel LoadToVAO(const std::vector<float>& _positions, const std::vector<unsigned int>& _indices);
 
 private:
 	GLuint CreateVAO();
 	void StoreDataInAttributeList(const int _attribNumber, const std::vector<float>& _data);
+	void BindIndicesBuffer(const std::vector<unsigned int>& _indices);
 	void UnbindVAO();
 
 	std::vector<GLuint> m_VAOs;
