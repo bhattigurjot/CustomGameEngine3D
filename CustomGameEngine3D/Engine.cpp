@@ -21,9 +21,9 @@ void Engine::Start()
 	{
 		m_gameWindow->InitializeSystems();
 		
-		m_renderer = new Renderer();
 		m_loader = new Loader();
 		m_shader = new StaticShader();
+		m_renderer = new Renderer(m_shader, m_gameWindow->GetAspectRatio());
 
 		m_isEngineRunning = true;
 	}
@@ -66,13 +66,16 @@ void Engine::Run()
 
 		Entity entity(
 			texturedModel,
-			glm::vec3(-0.5f,0.0f,0.0f),
+			glm::vec3(0.0f,0.0f,0.0f),
 			glm::vec3(0.0f),
 			glm::vec3(1.0f)
 		);
 
 		while (m_gameWindow->IsRunning())
 		{
+			entity.ChangePosition(0.0f, 0.0f, -0.01f);
+			//entity.ChangeRotation(0.0f, 1.0f, 0.0f);
+
 			m_renderer->Prepare(1.0f, 0.5f, 0.5f, 1.0f);
 			
 			m_shader->StartShader();

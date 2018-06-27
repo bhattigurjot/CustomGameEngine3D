@@ -27,6 +27,11 @@ int Window::GetWindowWidth() const
 	return m_windowWidth;
 }
 
+float Window::GetAspectRatio() const
+{
+	return (float)m_windowWidth / (float)m_windowHeight;
+}
+
 bool Window::IsRunning() const 
 { 
 	return m_isRunning; 

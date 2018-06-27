@@ -13,6 +13,7 @@ public:
 
 	int GetWindowHeight() const;
 	int GetWindowWidth() const;
+	float GetAspectRatio() const;
 	bool IsRunning() const;
 
 	void WindowDestroy();

@@ -9,6 +9,7 @@ public:
 	~StaticShader();
 
 	void LoadTransformationMatrix(const glm::mat4& _mat) const;
+	void LoadProjectionMatrix(const glm::mat4& _mat) const;
 
 protected:
 	void BindAttributes();
@@ -16,5 +17,6 @@ protected:
 
 private:
 	GLint m_location_transformationMatrix;
+	GLint m_location_projectionMatrix;
 };
 
