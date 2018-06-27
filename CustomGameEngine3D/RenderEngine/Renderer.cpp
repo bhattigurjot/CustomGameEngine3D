@@ -1,7 +1,5 @@
 #include "Renderer.h"
 
-
-
 Renderer::Renderer()
 {
 }
@@ -17,12 +15,22 @@ void Renderer::Prepare(const float& _r, const float& _g, const float& _b, const 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::Render(const RawModel& _model)
+void Renderer::Render(const TexturedModel* _model) const
 {
-	glBindVertexArray(_model.GetVaoID());
+	const RawModel& rawModel = _model->GetRawModel();
+
+	glBindVertexArray(rawModel.GetVaoID());
+	
 	glEnableVertexAttribArray(0);
-	//glDrawArrays(GL_TRIANGLES, 0, _model.GetVertexCount());
-	glDrawElements(GL_TRIANGLES, _model.GetVertexCount(), GL_UNSIGNED_INT, 0);
+	glEnableVertexAttribArray(1);
+
+	glActiveTexture(GL_TEXTURE0);
+
+	glBindTexture(GL_TEXTURE_2D, _model->GetTexture().GetTextureID());
+	glDrawElements(GL_TRIANGLES, rawModel.GetVertexCount(), GL_UNSIGNED_INT, 0);
+	
 	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	
 	glBindVertexArray(0);
 }

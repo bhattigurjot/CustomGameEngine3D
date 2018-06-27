@@ -24,9 +24,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RenderEngine\Loader.cpp" />
     <ClCompile Include="RenderEngine\Models\RawModel.cpp" />
+    <ClCompile Include="RenderEngine\Models\TexturedModel.cpp" />
     <ClCompile Include="RenderEngine\Renderer.cpp" />
     <ClCompile Include="RenderEngine\Shaders\Shader.cpp" />
     <ClCompile Include="RenderEngine\Shaders\StaticShader.cpp" />
+    <ClCompile Include="RenderEngine\Textures\ModelTexture.cpp" />
+    <ClCompile Include="RenderEngine\Textures\Texture.cpp" />
     <ClCompile Include="RenderEngine\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -35,15 +38,16 @@
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="RenderEngine\Loader.h" />
     <ClInclude Include="RenderEngine\Models\RawModel.h" />
+    <ClInclude Include="RenderEngine\Models\TexturedModel.h" />
     <ClInclude Include="RenderEngine\Models\Vertex.h" />
     <ClInclude Include="RenderEngine\Renderer.h" />
     <ClInclude Include="RenderEngine\Shaders\Shader.h" />
     <ClInclude Include="RenderEngine\Shaders\StaticShader.h" />
+    <ClInclude Include="RenderEngine\Textures\ModelTexture.h" />
+    <ClInclude Include="RenderEngine\Textures\Texture.h" />
+    <ClInclude Include="RenderEngine\Utils\Logger.h" />
+    <ClInclude Include="RenderEngine\Utils\stb_image.h" />
     <ClInclude Include="RenderEngine\Window.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shaders\basicShader_f.glsl" />
-    <None Include="Resources\shaders\basicShader_v.glsl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -5,7 +5,7 @@
 class RawModel
 {
 public:
-	RawModel(GLuint _vaoID, int _vertexCount);
+	RawModel(const GLuint _vaoID, const int _vertexCount);
 	~RawModel();
 
 	GLuint GetVaoID() const;

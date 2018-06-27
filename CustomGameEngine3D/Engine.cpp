@@ -52,15 +52,24 @@ void Engine::Run()
 			0, 1, 3,
 			3, 1, 2
 		};
+		std::vector<float> textureCoords = {
+			0.0f, 0.0f, // V0
+			0.0f, 1.0f, // V1
+			1.0f, 1.0f, // V2
+			1.0f, 0.0f  // V3
+		};
 
-		RawModel model = m_loader->LoadToVAO(vertices, indices);
+		//RawModel model = m_loader->LoadToVAO(vertices, 3);
+		RawModel model = m_loader->LoadToVAO(vertices, textureCoords, indices);
+		ModelTexture texture(m_loader->LoadTexture("Resources/textures/bricks.jpg"));
+		TexturedModel texturedModel(model, texture);
 
 		while (m_gameWindow->IsRunning())
 		{
 			m_renderer->Prepare(1.0f, 0.5f, 0.5f, 1.0f);
 			
 			m_shader->StartShader();
-			m_renderer->Render(model);
+			m_renderer->Render(&texturedModel);
 			m_shader->StopShader();
 
 			m_gameWindow->HandleInputs();

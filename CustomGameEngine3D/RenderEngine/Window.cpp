@@ -1,6 +1,6 @@
 #include "Window.h"
 
-#include "../Utils/Logger.h"
+#include "Utils/Logger.h"
 
 Window::Window(const int _width, const int _height, const std::string& _title):
 	m_windowWidth(_width),

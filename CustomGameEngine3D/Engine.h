@@ -3,7 +3,9 @@
 #include "RenderEngine/Loader.h"
 #include "RenderEngine/Renderer.h"
 #include "RenderEngine/Models/Vertex.h"
+#include "RenderEngine/Models/TexturedModel.h"
 #include "RenderEngine/Shaders/StaticShader.h"
+#include "RenderEngine/Textures/ModelTexture.h"
 
 class Engine
 {
