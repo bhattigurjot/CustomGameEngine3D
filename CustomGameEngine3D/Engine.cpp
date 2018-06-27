@@ -64,12 +64,19 @@ void Engine::Run()
 		ModelTexture texture(m_loader->LoadTexture("Resources/textures/bricks.jpg"));
 		TexturedModel texturedModel(model, texture);
 
+		Entity entity(
+			texturedModel,
+			glm::vec3(-1.0f,0.0f,0.0f),
+			glm::vec3(0.0f),
+			glm::vec3(1.0f)
+		);
+
 		while (m_gameWindow->IsRunning())
 		{
 			m_renderer->Prepare(1.0f, 0.5f, 0.5f, 1.0f);
 			
 			m_shader->StartShader();
-			m_renderer->Render(&texturedModel);
+			m_renderer->Render(&entity, m_shader);
 			m_shader->StopShader();
 
 			m_gameWindow->HandleInputs();

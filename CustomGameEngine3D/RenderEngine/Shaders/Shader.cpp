@@ -21,6 +21,7 @@ Shader::Shader(const std::string& _vertexShaderFile, const std::string& _fragmen
 	glValidateProgram(m_programID);
 	CheckShaderError(m_programID, GL_VALIDATE_STATUS, true, "Error: Program is invalid");
 
+	GetAllUniformLocations();
 }
 
 Shader::~Shader()
@@ -53,6 +54,36 @@ void Shader::StopShader()
 void Shader::BindAttribute(const GLuint _attribute, const GLchar* _variable)
 {
 	glBindAttribLocation(m_programID, _attribute, _variable);
+}
+
+GLint Shader::GetUniformLocation(const std::string& _uniformName)
+{
+	return glGetUniformLocation(m_programID, _uniformName.c_str());
+}
+
+void Shader::LoadFloat(const GLint& _location, const GLfloat& _value) const
+{
+	glUniform1f(_location, _value);
+}
+
+void Shader::LoadBoolean(const GLint& _location, const GLboolean& _value) const
+{
+	GLboolean toLoad = 0;
+
+	if (_value)
+		toLoad = 1;
+
+	glUniform1f(_location, toLoad);
+}
+
+void Shader::LoadVector(const GLint& _location, const glm::vec3& _vec) const
+{
+	glUniform3f(_location, _vec.x, _vec.y, _vec.z);
+}
+
+void Shader::Loadmatrix(const GLint& _location, const glm::mat4& _mat) const
+{
+	glUniformMatrix4fv(_location, _mat.length(), GL_FALSE, glm::value_ptr(_mat));
 }
 
 GLuint Shader::LoadShader(const std::string& _fileName, GLenum _shaderType)

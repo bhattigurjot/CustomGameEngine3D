@@ -22,6 +22,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EventHandler.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RenderEngine\Entities\Entity.cpp" />
     <ClCompile Include="RenderEngine\Loader.cpp" />
     <ClCompile Include="RenderEngine\Models\RawModel.cpp" />
     <ClCompile Include="RenderEngine\Models\TexturedModel.cpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EngineTime.h" />
     <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="RenderEngine\Entities\Entity.h" />
     <ClInclude Include="RenderEngine\Loader.h" />
     <ClInclude Include="RenderEngine\Models\RawModel.h" />
     <ClInclude Include="RenderEngine\Models\TexturedModel.h" />
@@ -45,6 +47,7 @@
     <ClInclude Include="RenderEngine\Shaders\StaticShader.h" />
     <ClInclude Include="RenderEngine\Textures\ModelTexture.h" />
     <ClInclude Include="RenderEngine\Textures\Texture.h" />
+    <ClInclude Include="RenderEngine\Utils\EngineMaths.h" />
     <ClInclude Include="RenderEngine\Utils\Logger.h" />
     <ClInclude Include="RenderEngine\Utils\stb_image.h" />
     <ClInclude Include="RenderEngine\Window.h" />

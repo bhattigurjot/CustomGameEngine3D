@@ -8,7 +8,13 @@ public:
 	StaticShader();
 	~StaticShader();
 
+	void LoadTransformationMatrix(const glm::mat4& _mat) const;
+
 protected:
 	void BindAttributes();
+	void GetAllUniformLocations();
+
+private:
+	GLint m_location_transformationMatrix;
 };
 
