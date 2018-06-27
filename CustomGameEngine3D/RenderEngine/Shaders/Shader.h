@@ -6,6 +6,8 @@
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
+
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtc/type_ptr.hpp>
 
 class Shader
@@ -22,12 +24,12 @@ protected:
 	void BindAttribute(const GLuint _attribute, const GLchar* _variable);
 
 	virtual void GetAllUniformLocations() = 0;
-	GLint GetUniformLocation(const std::string& _uniformName);
+	GLint GetUniformLocation(const GLchar* _uniformName);
 
 	void LoadFloat(const GLint& _location, const GLfloat& _value) const;
 	void LoadBoolean(const GLint& _location, const GLboolean& _value) const;
 	void LoadVector(const GLint& _location, const glm::vec3& _vec) const;
-	void Loadmatrix(const GLint& _location, const glm::mat4& _mat) const;
+	void LoadMatrix(const GLint& _location, const glm::mat4& _mat) const;
 
 private:
 	GLuint LoadShader(const std::string& _fileName, GLenum _shaderType);

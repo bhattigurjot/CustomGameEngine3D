@@ -6,6 +6,8 @@ StaticShader::StaticShader():
 		"Resources/shaders/basicShader_f.glsl"
 	)
 {
+	// Calling from here
+	GetAllUniformLocations();
 }
 
 StaticShader::~StaticShader()
@@ -25,5 +27,5 @@ void StaticShader::GetAllUniformLocations()
 
 void StaticShader::LoadTransformationMatrix(const glm::mat4& _mat) const
 {
-	Loadmatrix(m_location_transformationMatrix, _mat);
+	LoadMatrix(m_location_transformationMatrix, _mat);
 }

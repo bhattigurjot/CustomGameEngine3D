@@ -52,6 +52,13 @@
     <ClInclude Include="RenderEngine\Utils\stb_image.h" />
     <ClInclude Include="RenderEngine\Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shaders\basicShader_f.glsl" />
+    <None Include="Resources\shaders\basicShader_v.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\textures\bricks.jpg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{72237F58-BB8C-4616-84F6-E7C6229F5B3E}</ProjectGuid>

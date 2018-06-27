@@ -108,4 +108,17 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shaders\basicShader_f.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\shaders\basicShader_v.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\textures\bricks.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
